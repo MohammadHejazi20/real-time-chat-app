@@ -6,21 +6,12 @@ interface User {
   name: string;
 }
 
-const server = http.createServer(
-  (
-    _req: any,
-    res: {
-      writeHead: (arg0: number, arg1: { "Content-Type": string }) => void;
-      end: (arg0: string) => void;
-    }
-  ) => {
-    res.writeHead(200, { "Content-Type": "text/plain" });
-    res.end("WebSocket server is running");
-  }
-);
+const server = http.createServer((req, res) => {
+  res.writeHead(200, { "Content-Type": "text/plain" });
+  res.end("WebSocket server is running");
+});
 
 const io = new Server(server, {
-  // solve FUCKING CORS issue
   cors: {
     origin: "http://localhost:3000", // Match your client URL and port
     methods: ["GET", "POST"],
