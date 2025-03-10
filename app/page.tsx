@@ -91,9 +91,12 @@ const Home = () => {
             <span className="indicator-item indicator-start badge badge-secondary"></span>
             <div className="bg-base-300 grid h-auto w-auto place-items-center rounded-md p-3 gap-3">
               <h2 className="text-xl font-bold mb-2">Connected Users</h2>
-              <div className="gap-2">
+              <div className="">
                 {users.map((user) => (
-                  <div key={user.id} className="avatar online placeholder">
+                  <div
+                    key={user.id}
+                    className="avatar online placeholder gap-2"
+                  >
                     <div className="bg-neutral text-neutral-content w-16 rounded-full">
                       <span className="text-xl">{user.name}</span>
                     </div>

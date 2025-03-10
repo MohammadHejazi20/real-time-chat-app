@@ -1,14 +1,12 @@
 var http = require("http");
 var Server = require("socket.io").Server;
-var server = http.createServer(function (_req, res) {
+var server = http.createServer(function (req, res) {
     res.writeHead(200, { "Content-Type": "text/plain" });
     res.end("WebSocket server is running");
 });
 var io = new Server(server, {
-    // solve FUCKING CORS issue
     cors: {
-        // origin: "http://localhost:3000", // Match your client URL and port
-        origin: "http://192.168.2.148:3000",
+        origin: "http://localhost:3000", // Match your client URL and port
         methods: ["GET", "POST"],
         credentials: true,
     },
