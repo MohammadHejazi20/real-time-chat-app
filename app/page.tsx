@@ -1,6 +1,9 @@
 "use client";
 import { useState } from "react";
 import { JoinCard } from "@/components/join-card";
+import io from "socket.io-client";
+
+const socket = io("http://localhost:3001");
 
 export default function Home() {
   const [name, setName] = useState<string>("");
