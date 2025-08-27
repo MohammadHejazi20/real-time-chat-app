@@ -1,38 +1,30 @@
 {
-  "name": "my-app",
-  "version": "0.1.0",
+  "name": "real-time-chat-app-monorepo",
+  "version": "1.0.0",
   "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
   "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "@radix-ui/react-avatar": "^1.1.3",
-    "@radix-ui/react-label": "^2.1.2",
-    "@radix-ui/react-slot": "^1.1.2",
-    "class-variance-authority": "^0.7.1",
-    "clsx": "^2.1.1",
-    "lucide-react": "^0.479.0",
-    "next": "15.2.2",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "socket.io": "^4.8.1",
-    "socket.io-client": "^4.8.1",
-    "tailwind-merge": "^3.0.2",
-    "tailwindcss-animate": "^1.0.7"
+    "dev": "pnpm --parallel --filter=./apps/* dev",
+    "build": "pnpm --filter=./apps/* build",
+    "start": "pnpm --filter=./apps/* start",
+    "lint": "pnpm --filter=./apps/* lint",
+    "clean": "pnpm --filter=./apps/* clean",
+    "web:dev": "pnpm --filter=./apps/web dev",
+    "server:dev": "pnpm --filter=./apps/server dev",
+    "web:build": "pnpm --filter=./apps/web build",
+    "server:build": "pnpm --filter=./apps/server build",
+    "shared:build": "pnpm --filter=@real-time-chat-app/shared build",
+    "setup": "pnpm install && pnpm shared:build"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "^3",
-    "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
-    "@types/react": "^19.0.10",
-    "@types/react-dom": "^19",
-    "@types/socket.io-client": "^3.0.0",
-    "eslint": "^9",
-    "eslint-config-next": "15.2.2",
-    "tailwindcss": "^4",
     "typescript": "^5"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=8.0.0"
   }
 }

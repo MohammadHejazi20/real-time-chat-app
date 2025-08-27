@@ -1,0 +1,36 @@
+{
+  "name": "@real-time-chat-app/server",
+  "version": "1.0.0",
+  "description": "WebSocket server for real-time chat application",
+  "type": "module",
+  "scripts": {
+    "start": "node dist/index.js",
+    "dev": "tsx watch src/index.ts",
+    "build": "tsdown",
+    "watch": "tsc --watch",
+    "test": "jest",
+    "clean": "rm -rf dist",
+    "test-ws": "node test-websocket.js"
+  },
+  "keywords": [
+    "websocket",
+    "pubsub",
+    "typescript",
+    "realtime"
+  ],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.8.1",
+  "dependencies": {
+    "@real-time-chat-app/shared": "workspace:*",
+    "ts-node": "^10.0.0",
+    "typescript": "^5.0.0",
+    "ws": "^8.0.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^30.0.0",
+    "@types/node": "^24.2.1",
+    "@types/ws": "^8.18.1",
+    "tsdown": "^0.12.9"
+  }
+}
