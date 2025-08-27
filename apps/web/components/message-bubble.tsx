@@ -12,7 +12,7 @@ import {
   HoverCardTrigger,
 } from "@/components/ui/hover-card";
 import { MessageCircle, Clock, User } from "lucide-react";
-import { ChatMessage } from "@real-time-chat-app/shared";
+import { ChatMessage } from "@/my-turborepo/packages/shared";
 
 interface MessageBubbleProps {
   message: ChatMessage;

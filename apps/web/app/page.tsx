@@ -16,7 +16,7 @@ import {
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Textarea } from "@/components/ui/textarea";
 import { useWebSocket } from "@/hooks/useWebSocket";
-import { ChatMessage, SOCKET_EVENTS } from "@real-time-chat-app/shared";
+import { ChatMessage, SOCKET_EVENTS } from "../../../packages/shared";
 import { MessageCircle, Send, Users } from "lucide-react";
 import { useCallback, useEffect, useRef, useState } from "react";
 

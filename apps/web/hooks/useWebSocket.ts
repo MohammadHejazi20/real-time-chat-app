@@ -3,7 +3,7 @@ import {
   SOCKET_EVENTS,
   ChatMessage,
   TypingEvent,
-} from "@real-time-chat-app/shared";
+} from "@/my-turborepo/packages/shared";
 
 interface WebSocketMessage {
   type: string;
@@ -24,13 +24,13 @@ export function useWebSocket(options: UseWebSocketOptions) {
   const ws = useRef<WebSocket | null>(null);
   const [isConnected, setIsConnected] = useState(false);
   const [connectionId, setConnectionId] = useState<string | null>(null);
-  
+
   // Use refs to store callbacks to avoid recreating connection on callback changes
   const onMessageRef = useRef(onMessage);
   const onOpenRef = useRef(onOpen);
   const onCloseRef = useRef(onClose);
   const onErrorRef = useRef(onError);
-  
+
   // Update refs when callbacks change
   useEffect(() => {
     onMessageRef.current = onMessage;

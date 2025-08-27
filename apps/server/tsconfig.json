@@ -6,17 +6,26 @@
     "verbatimModuleSyntax": true,
     "strict": true,
     "skipLibCheck": true,
+    "rootDir": "../../", // Expand rootDir to include packages
     "baseUrl": "./",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@shared/*": ["../../packages/shared/*"],
+    }
     },
     "outDir": "./dist",
     "types": ["node"],
     "composite": true,
     "esModuleInterop": true,
     "jsx": "react-jsx",
-    "jsxImportSource": "hono/jsx"
-  },
+    "jsxImportSource": "hono/jsx",
+    "include": [
+    "src/**/*",
+    "../../packages/shared/**/*" // Include shared package files
+  ],
+  "references": [
+    { "path": "../../packages/shared" }
+  ],
   "tsc-alias": {
     "resolveFullPaths": true
   }

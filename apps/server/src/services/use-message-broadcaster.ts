@@ -1,5 +1,5 @@
 import { WebSocket, WebSocketServer } from "ws";
-import { SOCKET_EVENTS } from "@real-time-chat-app/shared";
+import { SOCKET_EVENTS } from "@shared/index";
 import { UseConnectionManager } from "../core/use-connection-manager";
 
 export class UseMessageBroadcaster {

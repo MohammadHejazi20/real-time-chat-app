@@ -1,5 +1,5 @@
 import { WebSocket } from "ws";
-import type { User } from "@real-time-chat-app/shared";
+import type { User } from "@shared/index";
 
 export class UseConnectionManager {
   private connections = new Map<WebSocket, string>();

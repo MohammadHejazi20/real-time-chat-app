@@ -1,10 +1,6 @@
 import { WebSocket } from "ws";
-import type {
-  ChatMessage,
-  User,
-  TypingEvent,
-} from "@real-time-chat-app/shared";
-import { SOCKET_EVENTS } from "@real-time-chat-app/shared";
+import type { ChatMessage, User, TypingEvent } from "@shared/index";
+import { SOCKET_EVENTS } from "@shared/index";
 import { UseConnectionManager } from "../core/use-connection-manager";
 import { UseMessageBroadcaster } from "../services/use-message-broadcaster";
 
