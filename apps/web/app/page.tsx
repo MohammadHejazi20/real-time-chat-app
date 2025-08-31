@@ -19,6 +19,7 @@ import { useWebSocket } from "@/hooks/useWebSocket";
 import { ChatMessage, SOCKET_EVENTS } from "../../../packages/shared";
 import { MessageCircle, Send, Users } from "lucide-react";
 import { useCallback, useEffect, useRef, useState } from "react";
+import { toast } from "sonner";
 
 export default function Home() {
   const [name, setName] = useState<string>("");
@@ -66,7 +67,7 @@ export default function Home() {
           break;
 
         case SOCKET_EVENTS.ERROR:
-          console.error("Server error:", data.message);
+          toast.error("That name is already taken. Please try another.");
           break;
 
         default:
