@@ -75,7 +75,7 @@ export class UseWebSocketServer {
       if (connectionId) {
         const user = this.connectionManager.getUser(connectionId);
         if (user) {
-          console.log(`👋 User ${user.name} disconnected`);
+          console.log(`User ${user.name} disconnected`);
         }
 
         this.broadcaster.broadcastUsersList();
@@ -113,15 +113,13 @@ export class UseWebSocketServer {
         `🚀 WebSocket server running on ws://${SERVER_CONFIG.HOST}:${SERVER_CONFIG.PORT}${SERVER_CONFIG.WS_PATH}`
       );
       console.log(`📊 Max connections: ${SERVER_CONFIG.MAX_CONNECTIONS}`);
-      console.log(
-        `💓 Heartbeat interval: ${SERVER_CONFIG.HEARTBEAT_INTERVAL}ms`
-      );
-      console.log(`🌍 Environment: ${SERVER_CONFIG.NODE_ENV}`);
+      console.log(`Heartbeat interval: ${SERVER_CONFIG.HEARTBEAT_INTERVAL}ms`);
+      console.log(`Environment: ${SERVER_CONFIG.NODE_ENV}`);
     });
   }
 
   stop(): void {
-    console.log("🛑 Shutting down WebSocket server gracefully...");
+    console.log("Shutting down WebSocket server gracefully...");
     clearInterval(this.heartbeat);
     this.wss.close(() => {
       this.server.close(() => {
